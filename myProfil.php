@@ -204,7 +204,7 @@ if (!isset($_SESSION['username'])) {
       <br>
       <br>
         <br>
-           <div class="text-center"> <h1>telebe cedveli</h1></div>
+           <div class="text-center"> <h1>telebenin profili</h1></div>
       </section>
 
       <?php }else{ ?>
@@ -213,7 +213,7 @@ if (!isset($_SESSION['username'])) {
       <br>
       <br>
         <br>
-           <div class="text-center"> <h1>mellim cedveli</h1></div>
+           <div class="text-center"> <h1> muellimin profili</h1></div>
       </section>
       <?php } ?>
       <!--main content end-->

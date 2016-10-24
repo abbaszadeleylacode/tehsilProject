@@ -74,14 +74,14 @@ if (!isset($_SESSION['username'])) {
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i>Mənim profilim</a>
+                                <a href="myProfil.php"><i class="icon_profile"></i>Mənim profilim</a>
                             </li>
                             <li>
-                                <a href="#"><i class="icon_mail_alt"></i>Gələn qutusu</a>
+                                <a href="inbox.php"><i class="icon_mail_alt"></i>Gələn qutusu</a>
                             </li>
 
                             <li>
-                                <a href="documentation.php"><i class="icon_key_alt"></i>Parametrlər </a>
+                                <a href="parametr.php"><i class="icon_key_alt"></i>Parametrlər </a>
                             </li>
 
                             <li>
@@ -111,14 +111,14 @@ if (!isset($_SESSION['username'])) {
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i>Mənim profilim</a>
+                                <a href="myProfil.php"><i class="icon_profile"></i>Mənim profilim</a>
                             </li>
                             <li>
-                                <a href="#"><i class="icon_mail_alt"></i>Gələn qutusu</a>
+                                <a href="inbox.php"><i class="icon_mail_alt"></i>Gələn qutusu</a>
                             </li>
 
                             <li>
-                                <a href="documentation.php"><i class="icon_key_alt"></i>Parametrlər </a>
+                                <a href="parametr.php"><i class="icon_key_alt"></i>Parametrlər </a>
                             </li>
 
                             <li>
