@@ -14,9 +14,6 @@ if (!isset($_SESSION['username'])) {
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
-
-    <title>Layout</title>
- 
     <link href="education/css/bootstrap.min.css" rel="stylesheet">
     <link href="education/css/bootstrap-theme.css" rel="stylesheet">
     <link href="education/css/elegant-icons-style.css" rel="stylesheet" />
@@ -57,6 +54,8 @@ if (!isset($_SESSION['username'])) {
                 <!--  search form end -->                
             </div>
 
+
+
             <?php 
               if ($_SESSION['type']=='sagird') {
              ?>
@@ -66,7 +65,7 @@ if (!isset($_SESSION['username'])) {
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="education/img/avatar1.jpg"  style="width: 20px; height: 20px;">
+                                <img alt="" src="education/img/avatar1.jpg"  style="width: 50px; height: 50px;">
                             </span>
                             <span class="username">Tələbə</span>
                             <b class="caret"></b>
@@ -94,7 +93,7 @@ if (!isset($_SESSION['username'])) {
                 <!-- notificatoin dropdown end-->
             </div>
                         <?php 
-                            }else
+                            }else if ($_SESSION['type']=='muellim')
                             {
              ?>
                         <div class="top-nav notification-row">                
@@ -103,7 +102,7 @@ if (!isset($_SESSION['username'])) {
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="education/img/user.jpg"  style="width: 20px; height: 20px;">
+                                <img alt="" src="education/img/user.jpg"  style="width: 50px; height: 50px;">
                             </span>
                             <span class="username">muellim</span>
                             <b class="caret"></b>
@@ -131,6 +130,40 @@ if (!isset($_SESSION['username'])) {
                 <!-- notificatoin dropdown end-->
             </div>
 
+<?php }else{ ?>
+<div class="top-nav notification-row">                
+                <!-- notificatoin dropdown start-->
+                <ul class="nav pull-right top-menu">  
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="" src="education/img/user.jpg"  style="width: 50px; height: 50px;">
+                            </span>
+                            <span class="username">Administrator</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li class="eborder-top">
+                                <a href="myProfil.php"><i class="icon_profile"></i>Mənim profilim</a>
+                            </li>
+                            <li>
+                                <a href="inbox.php"><i class="icon_mail_alt"></i>Gələn qutusu</a>
+                            </li>
+
+                            <li>
+                                <a href="parametr.php"><i class="icon_key_alt"></i>Parametrlər </a>
+                            </li>
+
+                            <li>
+                                <a href="login.php"><i class="icon_key_alt"></i>Çıxış</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!-- notificatoin dropdown end-->
+            </div>
 <?php } ?>
 
       </header>      
@@ -171,12 +204,59 @@ if (!isset($_SESSION['username'])) {
                           <li><a class="" href="grids.php">qiymet</a></li>
                       </ul> -->
                   </li>
+            <?php 
+              if ($_SESSION['type']=='muellim') {
+             ?>
                   <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
                           <span>Davamiyyət</span>
                       </a>
                   </li>
+
+                                      <li>                     
+                      <a class="" href="imtahan.php">
+                          <i class="icon_piechart"></i>
+                          <span>İmtahan</span>
+                          
+                      </a>
+                                         
+                  </li>
+                <?php }else if ($_SESSION['type']=='sagird'){ ?>
+
+                  <li>
+                      <a class="" href="davamiyyet.php">
+                          <i class="icon_genius"></i>
+                          <span>Davamiyyət</span>
+                      </a>
+                  </li>
+                      <li>
+                          <a class="" href="tedbir.php">
+                              <i class="icon_genius"></i>
+                              <span>Tədbir</span>
+                          </a>
+                      </li>
+                                        <li>                     
+                      <a class="" href="imtahan.php">
+                          <i class="icon_piechart"></i>
+                          <span>İmtahan</span>
+                          
+                      </a>
+                                         
+                  </li>
+                <?php }else{ ?>
+                                  <li>
+                      <a class="" href="davamiyyet.php">
+                          <i class="icon_genius"></i>
+                          <span>Davamiyyət</span>
+                      </a>
+                  </li>
+                   <li>
+                          <a class="" href="tedbir.php">
+                              <i class="icon_genius"></i>
+                              <span>Tədbir</span>
+                          </a>
+                      </li>
                   <li>                     
                       <a class="" href="imtahan.php">
                           <i class="icon_piechart"></i>
@@ -185,6 +265,8 @@ if (!isset($_SESSION['username'])) {
                       </a>
                                          
                   </li>
+
+                  <?php } ?>
                              
                  
                   
@@ -204,18 +286,88 @@ if (!isset($_SESSION['username'])) {
       <br>
       <br>
         <br>
-           <div class="text-center"> <h1>xosh gelmisen TELEBE</h1></div>
+         
+<div class="container">
+  <div class="jumbotron ">
+    <h2 class="text-right"><b>Xoş gəlmisiniz Tələbə(ad,soyad)</b></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Sinif</th>
+                    <th></th>
+          <th>Məlumatlar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td> 
+          <td>11z</td>
+          <th></th>
+          <td>Nizam-intizam balı:  <b>95</b></td><br>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
       </section>
 
-      <?php }else{ ?>
+      <?php }else if ($_SESSION['type']=='muellim'){ ?>
                   <section id="main-content">
       <br>
       <br>
       <br>
         <br>
-           <div class="text-center"> <h1>xosh gelmisen muellim</h1></div>
+          <div class="container">
+  <div class="jumbotron ">
+    <h2 class="text-right"><b>Xoş gəlmisiniz Müəllim(ad,soyad)</b></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Sinif</th>
+                    <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td> 
+          <td>11z</td>
+          <th></th>
+          <td></td><br>
+        </tr>
+        <tr>
+          <td>2</td> 
+          <td>10b</td>
+          <th></th>
+          <td></td><br>
+        </tr>
+        <tr>
+          <td>3</td> 
+          <td>9db</td>
+          <th></th>
+          <td></td><br>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
       </section>
-      <?php } ?>
+      <?php }else{ ?>
+                  <br>
+      <br>
+      <br>
+        <br>
+          <div class="container">
+            <div class="jumbotron ">
+              <h2 class="text-right"><b>Xoş gəlmisiniz Administrator</b>
+              </h2>
+            </div>
+          </div>
+          <?php } ?>
+      </section>
+
       <!--main content end-->
   </section>
   <!-- container section start -->

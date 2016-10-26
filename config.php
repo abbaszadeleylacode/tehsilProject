@@ -10,7 +10,9 @@ function testdb_connect ($host, $username, $password){
 
 try {
     $db = testdb_connect ($host, $username, $password);
-    echo 'qosuldu';
+    // echo 'qosuldu';
 } catch(PDOException $e) {
     echo $e->getMessage();
-} ?>
+} 
+
+?>

@@ -13,10 +13,7 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="img/favicon.png">
-
-    <title>Layout</title>
- 
+    <link rel="shortcut icon" href="img/favicon.png"> 
     <link href="education/css/bootstrap.min.css" rel="stylesheet">
     <link href="education/css/bootstrap-theme.css" rel="stylesheet">
     <link href="education/css/elegant-icons-style.css" rel="stylesheet" />
@@ -94,7 +91,7 @@ if (!isset($_SESSION['username'])) {
                 <!-- notificatoin dropdown end-->
             </div>
                         <?php 
-                            }else
+                            }else if ($_SESSION['type']=='muellim')
                             {
              ?>
                         <div class="top-nav notification-row">                
@@ -131,7 +128,42 @@ if (!isset($_SESSION['username'])) {
                 <!-- notificatoin dropdown end-->
             </div>
 
-<?php } ?>
+<?php }else{ ?>
+<div class="top-nav notification-row">                
+                <!-- notificatoin dropdown start-->
+                <ul class="nav pull-right top-menu">  
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="" src="education/img/user.jpg"  style="width: 20px; height: 20px;">
+                            </span>
+                            <span class="username">muellim</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li class="eborder-top">
+                                <a href="myProfil.php"><i class="icon_profile"></i>Mənim profilim</a>
+                            </li>
+                            <li>
+                                <a href="inbox.php"><i class="icon_mail_alt"></i>Gələn qutusu</a>
+                            </li>
+
+                            <li>
+                                <a href="parametr.php"><i class="icon_key_alt"></i>Parametrlər </a>
+                            </li>
+
+                            <li>
+                                <a href="login.php"><i class="icon_key_alt"></i>Çıxış</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!-- notificatoin dropdown end-->
+            </div>
+
+            <?php } ?>
 
       </header>      
       <!--header end-->
@@ -171,12 +203,59 @@ if (!isset($_SESSION['username'])) {
                           <li><a class="" href="grids.php">qiymet</a></li>
                       </ul> -->
                   </li>
+            <?php 
+              if ($_SESSION['type']=='muellim') {
+             ?>
                   <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
                           <span>Davamiyyət</span>
                       </a>
                   </li>
+                                      <li>                     
+                      <a class="" href="imtahan.php">
+                          <i class="icon_piechart"></i>
+                          <span>İmtahan</span>
+                          
+                      </a>
+                                         
+                  </li>
+                <?php }else if ($_SESSION['type']=='sagird'){ ?>
+                  <li>
+                      <a class="" href="davamiyyet.php">
+                          <i class="icon_genius"></i>
+                          <span>Davamiyyət</span>
+                      </a>
+                  </li>
+                      <li>
+                          <a class="" href="tedbir.php">
+                              <i class="icon_genius"></i>
+                              <span>Tədbir</span>
+                          </a>
+                      </li>
+                                        <li>                     
+                      <a class="" href="imtahan.php">
+                          <i class="icon_piechart"></i>
+                          <span>İmtahan</span>
+                          
+                      </a>
+                                         
+                  </li>
+                <?php }else{ ?>
+
+                                  <li>
+                      <a class="" href="davamiyyet.php">
+                          <i class="icon_genius"></i>
+                          <span>Davamiyyət</span>
+                      </a>
+                  </li>
+                      <li>
+                          <a class="" href="tedbir.php">
+                              <i class="icon_genius"></i>
+                              <span>Tədbir</span>
+                          </a>
+                      </li>
+
                   <li>                     
                       <a class="" href="imtahan.php">
                           <i class="icon_piechart"></i>
@@ -185,6 +264,7 @@ if (!isset($_SESSION['username'])) {
                       </a>
                                          
                   </li>
+                  <?php } ?>
                              
                  
                   
@@ -207,13 +287,21 @@ if (!isset($_SESSION['username'])) {
            <div class="text-center"> <h1>telebe gelen qutusu</h1></div>
       </section>
 
-      <?php }else{ ?>
+      <?php }else if ($_SESSION['type']=='muellim'){ ?>
                   <section id="main-content">
       <br>
       <br>
       <br>
         <br>
            <div class="text-center"> <h1> muellim gelen qutusu</h1></div>
+      </section>
+      <?php }else{ ?>
+                                <section id="main-content">
+      <br>
+      <br>
+      <br>
+        <br>
+           <div class="text-center"> <h1> Administrator gelen qutusu</h1></div>
       </section>
       <?php } ?>
       <!--main content end-->
@@ -309,59 +397,3 @@ if (!isset($_SESSION['username'])) {
 
   </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Əsas səhifə</title>
-    <link href="education/css/bootstrap.min.css" rel="stylesheet">
-    <link href="education/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="education/css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="education/css/font-awesome.css" rel="stylesheet" />
-    <link href="education/css/style.css" rel="stylesheet">
-    <link href="education/css/style-responsive.css" rel="stylesheet" />
-  </head>
-
-  <body  class="login-img3-body">
-
-  <section id="container" > 
-      <header class="header dark-bg">
-          
-
-            <a href="#" class="logo"><img src="education/img/logo.png" style="width: 60px; height: 40px;">Comp<span class="lite">İnter</span></a>
-      
-
-      </header>
-     
-      <section id="main-content">
-          <div class="container">
-
-            <form class="login-form" method="post" action="">        
-              <div class="login-wrap">
-                  <p class="login-img"><i class="icon_lock_alt"></i></p>
-                  <button class="btn btn-primary btn-lg btn-block" type="submit"  name="register">Registrasiya</button>
-                  <button class="btn btn-info btn-lg btn-block" type="submit" name="giris">Giriş</button>
-              </div>
-        </form>
-
-    </div>
-
-      </section>
-  </section>
-
-<?php
-if (isset($_POST['register'])) {
-header('location:register.php');
-}
-
-
-
-if (isset($_POST['giris'])) {
-  header('location:login.php');
-}
-?>
-
-  </body>
-</html>
- -->

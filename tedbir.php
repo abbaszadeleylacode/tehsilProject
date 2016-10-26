@@ -12,7 +12,7 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="img/favicon.png"> 
+    <link rel="shortcut icon" href="img/favicon.png">
     <link href="education/css/bootstrap.min.css" rel="stylesheet">
     <link href="education/css/bootstrap-theme.css" rel="stylesheet">
     <link href="education/css/elegant-icons-style.css" rel="stylesheet" />
@@ -90,7 +90,7 @@ if (!isset($_SESSION['username'])) {
                 <!-- notificatoin dropdown end-->
             </div>
                         <?php 
-                            }else if ($_SESSION['type']=='muellim')
+                            }else if($_SESSION['type']=='muellim')
                             {
              ?>
                         <div class="top-nav notification-row">                
@@ -128,7 +128,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
 <?php }else{ ?>
-                                <div class="top-nav notification-row">                
+                                  <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">  
                     <li class="dropdown">
@@ -182,16 +182,24 @@ if (!isset($_SESSION['username'])) {
                       <a href="dersCedveli.php " class="">
                           <i class="icon_document_alt"></i>
                           <span>Dərs cədvəli</span>
-                         
+                         <!--  <span class="menu-arrow arrow_carrot-right"></span> -->
                       </a>
-
+<!--                       <ul class="sub">
+                          <li><a class="" href="form_component.php">ders</a></li>                          
+                          <li><a class="" href="form_validation.php">ders</a></li>
+                      </ul> -->
                   </li>       
                   <li class="sub-menu">
                       <a href="qiymetCedveli.php" class="">
                           <i class="icon_desktop"></i>
                           <span>Qiymət cədvəli</span>
+                    <!--       <span class="menu-arrow arrow_carrot-right"></span> -->
                       </a>
-
+<!--                       <ul class="sub">
+                          <li><a class="" href="general.php">qiymet</a></li>
+                          <li><a class="" href="buttons.php">qiymet</a></li>
+                          <li><a class="" href="grids.php">qiymet</a></li>
+                      </ul> -->
                   </li>
             <?php 
               if ($_SESSION['type']=='muellim') {
@@ -202,19 +210,21 @@ if (!isset($_SESSION['username'])) {
                           <span>Davamiyyət</span>
                       </a>
                   </li>
-                                      <li>                     
+               <li>                     
                       <a class="" href="imtahan.php">
                           <i class="icon_piechart"></i>
-                          <span>İmtahan</span>                    
-                      </a>                    
+                          <span>İmtahan</span>
+                          
+                      </a>
+                                         
                   </li>
-                <?php }else if ($_SESSION['type']=='sagird'){ ?>
-                                        <li>
+             <?php }else if ($_SESSION['type']=='sagird'){ ?>
+                  <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
                           <span>Davamiyyət</span>
                       </a>
-                  </li>
+                  </li> 
                       <li>
                           <a class="" href="tedbir.php">
                               <i class="icon_genius"></i>
@@ -229,21 +239,22 @@ if (!isset($_SESSION['username'])) {
                       </a>
                                          
                   </li>
-                <?php }else{ ?>
-                   
-                                          <li>
+                <?php }else{ ?>  
+               
+                    <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
                           <span>Davamiyyət</span>
                       </a>
-                  </li>
+                  </li>   
+
                    <li>
                           <a class="" href="tedbir.php">
                               <i class="icon_genius"></i>
                               <span>Tədbir</span>
                           </a>
-                      </li>
-                  <li>                     
+                      </li> 
+                       <li>                     
                       <a class="" href="imtahan.php">
                           <i class="icon_piechart"></i>
                           <span>İmtahan</span>
@@ -251,8 +262,8 @@ if (!isset($_SESSION['username'])) {
                       </a>
                                          
                   </li>
-
                   <?php } ?>
+
                              
                  
                   
@@ -272,41 +283,14 @@ if (!isset($_SESSION['username'])) {
       <br>
       <br>
         <br>
-           <div class="text-center "> <h1>Şagirdin (Ad,soyad) qiymət cədvəli</h1></div>
-           <div class="container">
-                <h2>Qiymət cədvəli</h2>
-                <p>Dərs qiymətləndirilməsi 100 ballıq şkala əsasında</p>
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>İd</th>
-                      <th>Fənn</th>
-                      <th>Qiymət</th>
-                      <th>Davamiyyət</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Ana dili</td>
-                      <td>95</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Ədəbiyyat</td>
-                      <td>75</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Riyaziyyat</td>
-                      <td>55</td>
-                      <td></td>
-                    </tr>
-
-                  </tbody>
-                </table>
+          <div class="container">
+              <div class="col-md-6 col-md-offset-3">
+                <div class="page-header">
+                <h1>Məktəbimizdə baş tutacaq tədbirlər</h1>
+              </div>
+              <p>Tədbir cədvəli</p>
+              <iframe src="https://calendar.google.com/calendar/embed?showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=lk0uvjt50jd99c29rsknq7f77s%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
               </div>
       </section>
 
@@ -316,17 +300,27 @@ if (!isset($_SESSION['username'])) {
       <br>
       <br>
         <br>
-           <div class="text-center"> <h1>mellimin qiymet cedveli</h1></div>
+           <div class="text-center"> <h1>mellimin gorduyu tədbir</h1></div>
       </section>
       <?php }else{ ?>
-      <section id="main-content">
+                  <section id="main-content">
       <br>
       <br>
       <br>
         <br>
-           <div class="text-center"> <h1>Administrator qiymet daxil etdiyi hisse</h1></div>
+           <div class="text-center"> <h1>administrator elave etdiyi tədbir(g/c)</h1>
+
+            <div class="container">
+              <div class="col-md-4 col-md-offset-4">
+                <a href="https://calendar.google.com/calendar/render#main_7" class="btn btn-primary ">Tədbir cədvəlinə tədbir əlavə et</a>
+              </div>
+            </div>
+
+           </div>
       </section>
+
       <?php } ?>
+
       <!--main content end-->
   </section>
   <!-- container section start -->
@@ -420,59 +414,3 @@ if (!isset($_SESSION['username'])) {
 
   </body>
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Əsas səhifə</title>
-    <link href="education/css/bootstrap.min.css" rel="stylesheet">
-    <link href="education/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="education/css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="education/css/font-awesome.css" rel="stylesheet" />
-    <link href="education/css/style.css" rel="stylesheet">
-    <link href="education/css/style-responsive.css" rel="stylesheet" />
-  </head>
-
-  <body  class="login-img3-body">
-
-  <section id="container" > 
-      <header class="header dark-bg">
-          
-
-            <a href="#" class="logo"><img src="education/img/logo.png" style="width: 60px; height: 40px;">Comp<span class="lite">İnter</span></a>
-      
-
-      </header>
-     
-      <section id="main-content">
-          <div class="container">
-
-            <form class="login-form" method="post" action="">        
-              <div class="login-wrap">
-                  <p class="login-img"><i class="icon_lock_alt"></i></p>
-                  <button class="btn btn-primary btn-lg btn-block" type="submit"  name="register">Registrasiya</button>
-                  <button class="btn btn-info btn-lg btn-block" type="submit" name="giris">Giriş</button>
-              </div>
-        </form>
-
-    </div>
-
-      </section>
-  </section>
-
-<?php
-if (isset($_POST['register'])) {
-header('location:register.php');
-}
-
-
-
-if (isset($_POST['giris'])) {
-  header('location:login.php');
-}
-?>
-
-  </body>
-</html>
- -->
