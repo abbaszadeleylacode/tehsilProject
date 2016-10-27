@@ -180,6 +180,9 @@ if (!isset($_SESSION['username'])) {
                           <span>Ana səhifə</span>
                       </a>
                   </li>
+                              <?php 
+              if ($_SESSION['type']=='muellim') {
+             ?>
           <li class="sub-menu">
                       <a href="dersCedveli.php " class="">
                           <i class="icon_document_alt"></i>
@@ -203,9 +206,7 @@ if (!isset($_SESSION['username'])) {
                           <li><a class="" href="grids.php">qiymet</a></li>
                       </ul> -->
                   </li>
-            <?php 
-              if ($_SESSION['type']=='muellim') {
-             ?>
+
                   <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
@@ -219,7 +220,29 @@ if (!isset($_SESSION['username'])) {
                       </a>                      
                   </li>
                 <?php }else if($_SESSION['type']=='sagird'){ ?>
-
+                 <li class="sub-menu">
+                      <a href="dersCedveli.php " class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Dərs cədvəli</span>
+                         <!--  <span class="menu-arrow arrow_carrot-right"></span> -->
+                      </a>
+<!--                       <ul class="sub">
+                          <li><a class="" href="form_component.php">ders</a></li>                          
+                          <li><a class="" href="form_validation.php">ders</a></li>
+                      </ul> -->
+                  </li>       
+                  <li class="sub-menu">
+                      <a href="qiymetCedveli.php" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Qiymət cədvəli</span>
+                    <!--       <span class="menu-arrow arrow_carrot-right"></span> -->
+                      </a>
+<!--                       <ul class="sub">
+                          <li><a class="" href="general.php">qiymet</a></li>
+                          <li><a class="" href="buttons.php">qiymet</a></li>
+                          <li><a class="" href="grids.php">qiymet</a></li>
+                      </ul> -->
+                  </li>
                 <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
@@ -242,12 +265,13 @@ if (!isset($_SESSION['username'])) {
                                          
                   </li>
                 <?php }else{ ?>
-                  <li>
-                      <a class="" href="davamiyyet.php">
-                          <i class="icon_genius"></i>
-                          <span>Davamiyyət</span>
+                                      <li class="sub-menu">
+                      <a href="dersCedveli.php " class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Dərs cədvəli</span>
+                        
                       </a>
-                  </li>
+
                       <li>
                           <a class="" href="tedbir.php">
                               <i class="icon_genius"></i>
@@ -304,9 +328,9 @@ if (!isset($_SESSION['username'])) {
               </div>
 
         
-                   <iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffcc&amp;src=9k0ecopu79tkkp1clpf193d518%40group.calendar.google.com&amp;color=%237A367A&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br /><br /><br />
+                   <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc99&amp;src=tg7svuind8p4re6ronjo7l53oc%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br /><br /><br />
       
-                  <iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23009900&amp;src=rsif9odn5314b2ksoi23c5q8ms%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                  <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%239999ff&amp;src=jjd9vncqp2uiunujj4gg0o8a6s%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
           
 
 
@@ -343,9 +367,10 @@ if (!isset($_SESSION['username'])) {
               </div>
 
         
-                   <iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffcc&amp;src=9k0ecopu79tkkp1clpf193d518%40group.calendar.google.com&amp;color=%237A367A&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br /><br /><br />
+
+                   <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc99&amp;src=tg7svuind8p4re6ronjo7l53oc%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br /><br /><br />
       
-                  <iframe src="https://calendar.google.com/calendar/embed?showNav=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23009900&amp;src=rsif9odn5314b2ksoi23c5q8ms%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                  <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%239999ff&amp;src=jjd9vncqp2uiunujj4gg0o8a6s%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
           
 
 

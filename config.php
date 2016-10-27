@@ -16,3 +16,7 @@ try {
 } 
 
 ?>
+
+
+<!-- 
+SELECT sagird.sinif_id, sinif.name FROM sagird LEFT JOIN sinif ON sagird.sinif_id=sinif.name ORDER BY sagird.sinif_id -->

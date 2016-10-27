@@ -180,32 +180,24 @@ if (!isset($_SESSION['username'])) {
                           <span>Ana səhifə</span>
                       </a>
                   </li>
+
+       <?php 
+              if ($_SESSION['type']=='muellim') {
+        ?>
           <li class="sub-menu">
                       <a href="dersCedveli.php " class="">
                           <i class="icon_document_alt"></i>
                           <span>Dərs cədvəli</span>
-                         <!--  <span class="menu-arrow arrow_carrot-right"></span> -->
                       </a>
-<!--                       <ul class="sub">
-                          <li><a class="" href="form_component.php">ders</a></li>                          
-                          <li><a class="" href="form_validation.php">ders</a></li>
-                      </ul> -->
+
                   </li>       
                   <li class="sub-menu">
                       <a href="qiymetCedveli.php" class="">
                           <i class="icon_desktop"></i>
                           <span>Qiymət cədvəli</span>
-                    <!--       <span class="menu-arrow arrow_carrot-right"></span> -->
-                      </a>
-<!--                       <ul class="sub">
-                          <li><a class="" href="general.php">qiymet</a></li>
-                          <li><a class="" href="buttons.php">qiymet</a></li>
-                          <li><a class="" href="grids.php">qiymet</a></li>
-                      </ul> -->
+                        </a>
                   </li>
-            <?php 
-              if ($_SESSION['type']=='muellim') {
-             ?>
+
                   <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
@@ -222,7 +214,19 @@ if (!isset($_SESSION['username'])) {
                                          
                   </li>
             <?php }else if ($_SESSION['type']=='sagird'){ ?>
+                              <li class="sub-menu">
+                      <a href="dersCedveli.php " class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Dərs cədvəli</span>
+                      </a>
 
+                  </li>       
+                  <li class="sub-menu">
+                      <a href="qiymetCedveli.php" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Qiymət cədvəli</span>
+                        </a>
+                  </li>
                    <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
@@ -244,13 +248,12 @@ if (!isset($_SESSION['username'])) {
                                          
                   </li>
                   <?php }else{ ?>
-                                      <li>
-                      <a class="" href="davamiyyet.php">
-                          <i class="icon_genius"></i>
-                          <span>Davamiyyət</span>
+   
+                     <li class="sub-menu">
+                      <a href="dersCedveli.php " class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Dərs cədvəli</span>
                       </a>
-                  </li>   
-
                   <li>                     
                       <a class="" href="tedbir.php">
                           <i class="icon_piechart"></i>
@@ -288,22 +291,15 @@ if (!isset($_SESSION['username'])) {
            <div class="text-center"> <h1>telebe gorduyu davamiyyet</h1></div>
       </section>
 
-      <?php }else if ($_SESSION['type']=='muellim'){ ?>
-                  <section id="main-content">
+      <?php }else { ?>
+      <section id="main-content">
       <br>
       <br>
       <br>
         <br>
            <div class="text-center"> <h1>mellim gorduyu davamiyyet</h1></div>
       </section>
-      <?php }else{ ?>
-                              <section id="main-content">
-      <br>
-      <br>
-      <br>
-        <br>
-           <div class="text-center"> <h1>Administratorun gorduyu davamiyyet</h1></div>
-      </section>
+
 
       <?php } ?>
       <!--main content end-->

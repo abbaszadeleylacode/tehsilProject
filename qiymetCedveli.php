@@ -230,13 +230,13 @@ if (!isset($_SESSION['username'])) {
                                          
                   </li>
                 <?php }else{ ?>
-                   
-                                          <li>
-                      <a class="" href="davamiyyet.php">
-                          <i class="icon_genius"></i>
-                          <span>Davamiyyət</span>
+                                       <li class="sub-menu">
+                      <a href="dersCedveli.php " class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Dərs cədvəli</span>
                       </a>
-                  </li>
+
+                  </li> 
                    <li>
                           <a class="" href="tedbir.php">
                               <i class="icon_genius"></i>
