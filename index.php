@@ -98,8 +98,16 @@ header('location:login.php');
               <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <span class="profile-ava">
                   <img alt="" src="education/img/avatar1.jpg"  style="width: 50px; height: 50px;">
+                </span> <?php
+                          include "showDb.php";                              
+                          $id=$_SESSION['id']; 
+                             $sql="SELECT * FROM sagird WHERE id='$id'"; 
+                          $query=mysqli_query($db_connection,$sql);
+                          $row= mysqli_fetch_assoc($query);
+                             ?>
+                <span class="username">
+                       <?php echo ($_SESSION['username']); ?>
                 </span>
-                <span class="username">Tələbə</span>
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu extended logout">
@@ -134,7 +142,14 @@ header('location:login.php');
                 <span class="profile-ava">
                   <img alt="" src="education/img/user.jpg"  style="width: 50px; height: 50px;">
                 </span>
-                <span class="username">muellim</span>
+                <?php
+                  include "showDb.php";                              
+                  $id=$_SESSION['id']; 
+                     $sql="SELECT * FROM sagird WHERE id='$id'"; 
+                  $query=mysqli_query($db_connection,$sql);
+                  $row= mysqli_fetch_assoc($query);
+                     ?> 
+                <span class="username"><?php echo ($_SESSION['username']); ?></span>
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu extended logout">
@@ -166,7 +181,14 @@ header('location:login.php');
                 <span class="profile-ava">
                   <img alt="" src="education/img/user.jpg"  style="width: 50px; height: 50px;">
                 </span>
-                <span class="username">Administrator</span>
+                <?php
+                    include "showDb.php";                              
+                    $id=$_SESSION['id']; 
+                       $sql="SELECT * FROM sagird WHERE id='$id'"; 
+                    $query=mysqli_query($db_connection,$sql);
+                    $row= mysqli_fetch_assoc($query);
+                       ?> 
+                <span class="username"><?php echo ($_SESSION['username']); ?></span>
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu extended logout">
@@ -270,6 +292,12 @@ header('location:login.php');
               
             </li>
             <?php }else{ ?>
+                              <li>                     
+                      <a class="" href="qeydiyyatShow.php">
+                          <i class="icon_piechart"></i>
+                          <span>Şagird siyahısı</span>                       
+                      </a>                 
+                  </li>
             <li class="sub-menu">
               <a href="dersCedveli.php " class="">
                 <i class="icon_document_alt"></i>
@@ -303,17 +331,29 @@ header('location:login.php');
       <!--sidebar end-->
       <?php
       if ($_SESSION['type']=='sagird') {
-      ?>
+      ?>    sen istirsenki meselen men sagirdem sen girende senin adin cixsin i
       <!--main content start-->
       <section id="main-content">
         <br>
         <br>
         <br>
         <br>
-        
+<?php
+    include "showDb.php";                              
+    $id=$_SESSION['id']; 
+       $sql="SELECT * FROM sagird WHERE id='$id'"; 
+    $query=mysqli_query($db_connection,$sql);
+    $row= mysqli_fetch_assoc($query);
+       ?>    
+
         <div class="container">
           <div class="jumbotron ">
-            <h2 class="text-right"><b>Xoş gəlmisiniz Tələbə(ad,soyad)</b></h2>
+            <h2 class="text-right"><b>Xoş gəlmisiniz  
+                 <?php echo ($_SESSION['username']); ?>  
+                 
+              </tr>
+          
+             </b></h2>
             <table class="table">
               <thead>
                 <tr>
@@ -341,9 +381,17 @@ header('location:login.php');
         <br>
         <br>
         <br>
+        <?php
+    include "showDb.php";                              
+    $id=$_SESSION['id']; 
+       $sql="SELECT * FROM sagird WHERE id='$id'"; 
+    $query=mysqli_query($db_connection,$sql);
+    $row= mysqli_fetch_assoc($query);
+       ?>  
         <div class="container">
           <div class="jumbotron ">
-            <h2 class="text-right"><b>Xoş gəlmisiniz Müəllim(ad,soyad)</b></h2>
+            <h2 class="text-right"><b>Xoş gəlmisiniz 
+  <?php echo ($_SESSION['username']); ?> </b></h2>
             <table class="table">
               <thead>
                 <tr>
@@ -382,10 +430,21 @@ header('location:login.php');
       <br>
       <br>
       <br>
+      <?php
+    include "showDb.php";                              
+    $id=$_SESSION['id']; 
+       $sql="SELECT * FROM sagird WHERE id='$id'"; 
+    $query=mysqli_query($db_connection,$sql);
+    $row= mysqli_fetch_assoc($query);
+       ?>  
       <div class="container">
-        <div class="jumbotron ">
-          <h2 class="text-right"><b>Xoş gəlmisiniz Administrator</b></h2>
-        </div><br>
+            <div class="col-md-10 col-md-offset-2">
+                       <div class="jumbotron ">
+          <h2 class="text-right"><b>Xoş gəlmisiniz <?php echo ($_SESSION['username']); ?></b></h2>
+        </div>
+            </div>
+
+<br>
         <div class="jumbotron col-md-10 col-md-offset-2">
           <div class="">
             <div class="panel panel-success">

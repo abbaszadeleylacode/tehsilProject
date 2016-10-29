@@ -253,7 +253,13 @@ if (!isset($_SESSION['username'])) {
                       </a>
                                          
                   </li>
-                <?php }else{ ?>   
+                <?php }else{ ?> 
+                                  <li>                     
+                      <a class="" href="qeydiyyatShow.php">
+                          <i class="icon_piechart"></i>
+                          <span>Şagird siyahısı</span>                       
+                      </a>                 
+                  </li>  
                                       <li class="sub-menu">
                       <a href="dersCedveli.php " class="">
                           <i class="icon_document_alt"></i>
@@ -289,6 +295,9 @@ if (!isset($_SESSION['username'])) {
       <br>
         <br>
            <div class="text-center"> <h1>telebenin gorduyu imtahan</h1></div>
+           <div class="col-md-10 col-md-offset-2">
+             <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%2333ccff&amp;src=hl96je3fdb4hqt2b17dmfo6er8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+           </div>
       </section>
 
       <?php }else if ($_SESSION['type']=='muellim'){ ?>
@@ -298,6 +307,9 @@ if (!isset($_SESSION['username'])) {
       <br>
         <br>
            <div class="text-center"> <h1>mellimin gorduyu imtahan</h1></div>
+           <div class="col-md-10 col-md-offset-2">
+           <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;height=600&amp;wkst=1&amp;bgcolor=%2333ccff&amp;src=hl96je3fdb4hqt2b17dmfo6er8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=Asia%2FBaku" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+           </div>
       </section>
       <?php }else{ ?>
              <section id="main-content">
@@ -310,6 +322,8 @@ if (!isset($_SESSION['username'])) {
             <div class="container">
               <div class="col-md-4 col-md-offset-4">
                 <a href="https://calendar.google.com/calendar/render#main_7" class="btn btn-primary ">İmtahan cədvəlinə imtahan əlavə et</a>
+
+
               </div>
             </div>
 

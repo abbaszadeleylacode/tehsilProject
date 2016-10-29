@@ -249,6 +249,12 @@ if (!isset($_SESSION['username'])) {
                                          
                   </li>
                 <?php }else{ ?>
+                                  <li>                     
+                      <a class="" href="qeydiyyatShow.php">
+                          <i class="icon_piechart"></i>
+                         <span>Şagird siyahısı</span>                      
+                      </a>                 
+                  </li>
                 
                  <li class="sub-menu">
                       <a href="dersCedveli.php " class="">

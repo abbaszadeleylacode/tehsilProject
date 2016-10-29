@@ -1,5 +1,4 @@
-
- <?php 
+<?php 
 include "config.php";
 session_start();
 if (!isset($_SESSION['username'])) {
@@ -13,7 +12,7 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="img/favicon.png"> 
+    <link rel="shortcut icon" href="img/favicon.png">
     <link href="education/css/bootstrap.min.css" rel="stylesheet">
     <link href="education/css/bootstrap-theme.css" rel="stylesheet">
     <link href="education/css/elegant-icons-style.css" rel="stylesheet" />
@@ -30,7 +29,38 @@ if (!isset($_SESSION['username'])) {
   <link href="education/css/xcharts.min.css" rel=" stylesheet"> 
   <link href="education/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
   </head>
+<style>
 
+.create{
+  margin-bottom: 20px;
+  background:lightgreen;
+  color:white;
+}
+table{
+  margin-top:50px;
+}
+a{  
+  padding:5px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.read{
+  background-color:yellow;
+}
+.update{
+  background-color:green;
+  color:white;
+}
+.delete{
+  background-color: darkred;
+  color:white;
+}
+
+table,th,tr,td{
+  border:1px solid black;
+}
+
+</style>
   <body>
   <!-- container section start -->
   <section id="container" class=""> 
@@ -46,8 +76,10 @@ if (!isset($_SESSION['username'])) {
                 <!--  search form start -->
                 <ul class="nav top-menu">                    
                     <li>
-                        <form class="navbar-form">
-                            <input class="form-control" placeholder="Axtarış" type="text">
+                        <form class="navbar-form" method="post" action="qeydiyyatShow.php">
+                            <input class="form-control" name="valueToSerach" placeholder="Axtarış" type="text">
+                           
+                            <input class="btn btn-success" type="submit" name="search" value="Axtar">
                         </form>
                     </li>                    
                 </ul>
@@ -91,7 +123,7 @@ if (!isset($_SESSION['username'])) {
                 <!-- notificatoin dropdown end-->
             </div>
                         <?php 
-                            }else if ($_SESSION['type']=='muellim')
+                            }else if($_SESSION['type']=='muellim')
                             {
              ?>
                         <div class="top-nav notification-row">                
@@ -129,7 +161,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
 <?php }else{ ?>
-<div class="top-nav notification-row">                
+                                  <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">  
                     <li class="dropdown">
@@ -137,7 +169,7 @@ if (!isset($_SESSION['username'])) {
                             <span class="profile-ava">
                                 <img alt="" src="education/img/user.jpg"  style="width: 20px; height: 20px;">
                             </span>
-                            <span class="username">muellim</span>
+                            <span class="username">Administrator</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -162,8 +194,7 @@ if (!isset($_SESSION['username'])) {
                 </ul>
                 <!-- notificatoin dropdown end-->
             </div>
-
-            <?php } ?>
+<?php } ?>
 
       </header>      
       <!--header end-->
@@ -187,7 +218,6 @@ if (!isset($_SESSION['username'])) {
                       <a href="dersCedveli.php " class="">
                           <i class="icon_document_alt"></i>
                           <span>Dərs cədvəli</span>
-                        
                       </a>
 
                   </li>       
@@ -195,8 +225,8 @@ if (!isset($_SESSION['username'])) {
                       <a href="qiymetCedveli.php" class="">
                           <i class="icon_desktop"></i>
                           <span>Qiymət cədvəli</span>
+                   
                       </a>
-
                   </li>
 
                   <li>
@@ -205,7 +235,7 @@ if (!isset($_SESSION['username'])) {
                           <span>Davamiyyət</span>
                       </a>
                   </li>
-                                      <li>                     
+               <li>                     
                       <a class="" href="imtahan.php">
                           <i class="icon_piechart"></i>
                           <span>İmtahan</span>
@@ -213,12 +243,11 @@ if (!isset($_SESSION['username'])) {
                       </a>
                                          
                   </li>
-                <?php }else if ($_SESSION['type']=='sagird'){ ?>
-                <li class="sub-menu">
+             <?php }else if ($_SESSION['type']=='sagird'){ ?>
+                       <li class="sub-menu">
                       <a href="dersCedveli.php " class="">
                           <i class="icon_document_alt"></i>
                           <span>Dərs cədvəli</span>
-                        
                       </a>
 
                   </li>       
@@ -226,15 +255,15 @@ if (!isset($_SESSION['username'])) {
                       <a href="qiymetCedveli.php" class="">
                           <i class="icon_desktop"></i>
                           <span>Qiymət cədvəli</span>
+                   
                       </a>
-
                   </li>
                   <li>
                       <a class="" href="davamiyyet.php">
                           <i class="icon_genius"></i>
                           <span>Davamiyyət</span>
                       </a>
-                  </li>
+                  </li> 
                       <li>
                           <a class="" href="tedbir.php">
                               <i class="icon_genius"></i>
@@ -249,30 +278,29 @@ if (!isset($_SESSION['username'])) {
                       </a>
                                          
                   </li>
-                <?php }else{ ?>
+                <?php }else{ ?>  
                                   <li>                     
                       <a class="" href="qeydiyyatShow.php">
                           <i class="icon_piechart"></i>
-                       <span>Şagird siyahısı</span>                      
+                          <span>Şagird siyahısı</span>                       
                       </a>                 
                   </li>
-
-                <li class="sub-menu">
+                                      <li class="sub-menu">
                       <a href="dersCedveli.php " class="">
                           <i class="icon_document_alt"></i>
                           <span>Dərs cədvəli</span>
-                        
                       </a>
 
-                  </li>
-                      <li>
+                  </li> 
+   
+
+                   <li>
                           <a class="" href="tedbir.php">
                               <i class="icon_genius"></i>
                               <span>Tədbir</span>
                           </a>
-                      </li>
-
-                  <li>                     
+                      </li> 
+                       <li>                     
                       <a class="" href="imtahan.php">
                           <i class="icon_piechart"></i>
                           <span>İmtahan</span>
@@ -281,6 +309,7 @@ if (!isset($_SESSION['username'])) {
                                          
                   </li>
                   <?php } ?>
+
                              
                  
                   
@@ -291,35 +320,87 @@ if (!isset($_SESSION['username'])) {
           </div>
       </aside>
       <!--sidebar end-->
-      <?php 
-          if ($_SESSION['type']=='sagird') {
-       ?>
-      <!--main content start-->
-      <section id="main-content">
-      <br>
-      <br>
-      <br>
-        <br>
-           <div class="text-center"> <h1>telebe gelen qutusu</h1></div>
-      </section>
+<section id="qeydiyyatShow">
+  <br>
+  <br>
+  <br>
+<!--   <br>
+  <div class="container"> -->
+   <!--  <div class="col-md-10 col-md-offset-2"> -->
+      <div class="jumbotron">
+          <div class="container-fluid">
+<div class="row">
+<h2>Qeydiyyat siyahısı</h2>
+<?php 
+if (isset($_POST['search'])) 
+{
+  $valueToSerach = $_POST['valueToSerach'];
+   $query = "SELECT * FROM `sagird` WHERE `id` LIKE '%$valueToSerach%' OR `name` LIKE '%$valueToSerach%'";
 
-      <?php }else if ($_SESSION['type']=='muellim'){ ?>
-                  <section id="main-content">
-      <br>
-      <br>
-      <br>
-        <br>
-           <div class="text-center"> <h1> muellim gelen qutusu</h1></div>
-      </section>
-      <?php }else{ ?>
-                                <section id="main-content">
-      <br>
-      <br>
-      <br>
-        <br>
-           <div class="text-center"> <h1> Administrator gelen qutusu</h1></div>
-      </section>
-      <?php } ?>
+  $search_result = filterTable($query);
+}else{
+  $query = "SELECT * FROM `sagird`";
+  $search_result = filterTable($query);
+}
+function filterTable($query)
+{
+  $connect = mysqli_connect("localhost","root","","tehsil");
+  $filter_Result = mysqli_query($connect , $query);
+  return  $filter_Result;
+}
+
+
+ ?>
+
+ 
+</div>
+<table >
+
+    <tr>
+    <th>ID</th>
+      <th>Adı</th>
+      <th>Soyadı</th>
+      <th>Qeydiyyat/ünvanı</th>
+       <th>Yaş</th>
+       <th>Sinif</th>
+       <th>Ata adı</th>
+       <th>Doğulduğu/Şəhər</th>
+       <th>Şəkil</th>
+       <th>Vəsiqə/No</th>
+       <th>Telefon/No</th>
+       <th>Valideyn/kodu</th>
+       <th>Redaktə</th>
+    </tr>
+ <?php while($row = mysqli_fetch_array($search_result)): 
+ ?> 
+
+<tr>
+  <td><?php echo $row['id']; ?></td>
+  <td><?php echo $row['name']; ?></td>
+  <td><?php echo $row['surname']; ?></td>
+  <td><?php echo $row['address']; ?></td>
+  <td><?php echo $row['age']; ?></td>
+  <td><?php echo $row['sinif_id']; ?></td>
+  <td><?php echo $row['ata_adi']; ?></td>
+  <td><?php echo $row['sheher']; ?></td>
+  <td><?php echo $row['sekil']; ?></td>
+   <td><?php echo $row['vesiqe_no']; ?></td>
+   <td><?php echo $row['tel_no']; ?></td>
+   <td><?php echo $row['code']; ?></td>
+   <td> <a href="read.php?id=<?=$row['id']?>" class="read">Oxu</a>
+    <!--    <a href="update.php?id=<?=$row['id']?>" class="update">Yenilə</a> -->
+  <a href="delete.php?id=<?=$row['id']?>" class="delete">Sil</a></td>
+</tr>
+ <?php endwhile; ?>
+</table> 
+</form>
+<!-- </div>
+</div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
       <!--main content end-->
   </section>
   <!-- container section start -->
